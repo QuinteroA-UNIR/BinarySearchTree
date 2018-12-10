@@ -5,6 +5,13 @@ public class Node<T> {
 	private Node<T> left;
 	private Node<T> right;
 	
+	public int children() {
+		int result = 0;
+		if (left != null) result++;
+		if (right != null) result++;
+		return result;
+	};
+	
 	public Node(T value) {
 		this.value = value;
 	}

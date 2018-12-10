@@ -35,6 +35,56 @@ public class BinarySearchTree {
 		}
 	}
 	
+	public boolean contains(int val) {
+		return this.find(root, val) != null;
+	}
+	
+	public void delete(int val) {
+		this.delete(root,val);
+	}
+	
+	private Node<Integer> delete(Node<Integer> node, int val){
+		if (node == null) return node;
+		
+		if (val > node.getValue()) {
+			node.setRight(this.delete(node.getRight(), val));
+			return node;
+		} else if (val < node.getValue()) {
+			node.setLeft(this.delete(node.getLeft(), val));
+			return node;
+		} else {
+			if (node.children() == 0) {
+				return null;
+			} else if (node.children() == 1) {
+				return node.getLeft() != null ? node.getLeft() : node.getRight();
+			} else {
+				Node<Integer> succesor = this.mostLeftChild(node.getRight());
+				int succesorValue = succesor.getValue();
+				node.setValue(succesorValue);
+				node.setRight(this.delete(node.getRight(),succesorValue));
+			}
+		}
+		return node;
+	}
+	
+	private Node<Integer> mostLeftChild(Node<Integer> node) {
+		if (node.getLeft() == null) {
+			return node;
+		} else {
+			return this.mostLeftChild(node.getLeft());
+		}
+	}
+	
+	public Node<Integer> find(Node<Integer> node, int val) {
+		if (node == null || node.getValue() == val) {
+			return node;
+		} else if (val > node.getValue()) {
+			return this.find(node.getRight(), val);
+		} else {
+			return this.find(node.getLeft(), val);
+		}
+	}
+	
 	private Node<Integer> insert(Node<Integer> node, int val) {
 		
 		if (node == null) {
