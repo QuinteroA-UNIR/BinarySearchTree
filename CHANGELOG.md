@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2018.12.17-20:23
+
++ Updated gitiginore.
++ Removed `/target/` files.
+
 ## 2018.12.17-20:07
 
 + Documentation finished on the code.
