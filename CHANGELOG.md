@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2018.12.17-21:16
+
++ README file finished.
++ Added duplicate element insertion to the main class.
+
 ## 2018.12.17-20:23
 
 + Updated gitiginore.

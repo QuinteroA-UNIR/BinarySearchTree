@@ -22,6 +22,12 @@ public class MainExample {
 		bst.printTree();
 		System.out.println();
 		
+		System.out.println("+- Agregacion de elemento duplicado:");
+		System.out.println("  - Agregar elemento: 3");
+		bst.printTree();
+		System.out.println();
+		
+		
 		boolean res;
 		System.out.println("+- Revisar elementos dentro del ABB:");
 		res = bst.contains(10);
@@ -43,6 +49,9 @@ public class MainExample {
 		bst.printTree();
 		System.out.println("  - Eliminar elemento sin hijos: 5");
 		bst.delete(5);
+		bst.printTree();
+		System.out.println("  - Eliminar elemento inexistente: 0");
+		bst.delete(0);
 		bst.printTree();
 		System.out.println();
 		
